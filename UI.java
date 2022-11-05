@@ -1,5 +1,10 @@
+/*
+ * Jason Boyett - jaboye2448
+ * CIT 4423 01
+ * Nov 5, 2022
+ * mac OS 12
+ */
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -14,7 +19,6 @@ public class UI extends JFrame {
     private GridLayout grid = new GridLayout(3, 1, 10, 10);
     private JPanel panel = new JPanel(grid);
     private JButton exit = new JButton("Exit");
-    private JFileChooser chooser = new JFileChooser();
 
     public UI() {
         this.text.setEditable(false);

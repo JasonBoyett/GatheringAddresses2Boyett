@@ -1,10 +1,9 @@
 /*
  * Jason Boyett - jaboye2448
  * CIT 4423 01
- * Oct 16, 2022
+ * Nov 5, 2022
  * mac OS 12
  */
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -36,7 +35,7 @@ public class Account implements Serializable{
         String nameIDAndComment = "Account ID : " + this.id + "\n" +"Name: "+ this.name + "\n" + ASK_FOR_COMMENT;
         this.timeCreated = LocalDateTime.now();//shows the time the object was created
         this.comment = JOptionPane.showInputDialog(null, nameIDAndComment);//adds a comment to the account
-        if(this.comment.equals(null) || this.comment.equals("")){//if the user doesn't add a comment the comment will be "no comment added"
+        if(this.comment == null || this.comment.equals("")){//if the user doesn't add a comment the comment will be "no comment added"
             this.comment = "No comment added.";
         }
         serializeAccount();//account object is serialized
@@ -53,7 +52,7 @@ public class Account implements Serializable{
         info += "City: " + this.city + "\n";
         info += "Zip: " + this.zipCode + "\n";
         info += "Best time to contact: " + this.timeToContact + "\n";
-        info += String.format("Balance: $%,.2f \n", (((double)this.balance)/100));
+        info += String.format("Balance: $%,.2f %n", (((double)this.balance)/100));
         info += "Comment: " + this.comment + "\n";
         info += "Last update: " + this.timeCreated + "\n";
 
@@ -64,7 +63,6 @@ public class Account implements Serializable{
 
     public void parseConstructorString(String constructor, Account account){
         String[] attributes = new String[9];
-        int startIndex = 0;
         String attributeDelimiter = "$";
         StringTokenizer tokenizer = new StringTokenizer(constructor, attributeDelimiter);
 
@@ -92,15 +90,9 @@ public class Account implements Serializable{
             objOut.writeObject(this);
             objOut.close();
 
-        } catch (FileNotFoundException e) {
-
-            e.printStackTrace();
-
         } catch (IOException e) {
-
             e.printStackTrace();
-
-        }
+        } 
     }
 
     public String getName(){

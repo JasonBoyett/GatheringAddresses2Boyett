@@ -1,3 +1,9 @@
+/*
+ * Jason Boyett - jaboye2448
+ * CIT 4423 01
+ * Nov 5, 2022
+ * mac OS 12
+ */
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -12,11 +18,11 @@ import java.awt.FlowLayout;
 public class AccountChooser extends JFrame {
     private JPanel panel = new JPanel(new FlowLayout());
     private JButton create = new JButton("Create");
-    private JCheckBox boxes[];
-    private Account accounts[];
+    private JCheckBox[] boxes;
+    private Account[] accounts;
     private JTextArea target;
 
-    public AccountChooser(Account accounts[], JTextArea target) {
+    public AccountChooser(Account[] accounts, JTextArea target) {
         this.target = target;
         this.setVisible(true);
         this.accounts = accounts;
@@ -35,7 +41,7 @@ public class AccountChooser extends JFrame {
     }
 
     public Account[] getSelected() {
-        ArrayList<Account> selected = new ArrayList();
+        ArrayList<Account> selected = new ArrayList<>();
 
         for (int i = 0; i < this.boxes.length; i++) {
             if (boxes[i].isSelected()) {
@@ -46,12 +52,12 @@ public class AccountChooser extends JFrame {
         return selected.toArray(new Account[selected.size()]);
     }
 
-    private void setTarget(){
-        String result = "";
-        for(Account account : this.getSelected()){
-            result += account.getInfoString();
+    private void setTarget() {
+        StringBuilder bld = new StringBuilder();
+        for (Account account : this.getSelected()) {
+            bld.append(account.getInfoString() + "\n");
         }
-        this.target.setText(result);
+        this.target.setText(bld.toString());
         this.target.update(getGraphics());
         this.dispose();
     }

@@ -1,3 +1,9 @@
+/*
+ * Jason Boyett - jaboye2448
+ * CIT 4423 01
+ * Nov 5, 2022
+ * mac OS 12
+ */
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -28,17 +34,16 @@ public class FileButton extends JButton {
 
             if (found == JFileChooser.APPROVE_OPTION) {
                 String filename = chooser.getSelectedFile().getAbsolutePath();
-                Account accounts[] = constructAccounts(getStringFromFile(filename));
+                Account[] accounts = constructAccounts(getStringFromFile(filename));
                 AccountChooser accountChooser = new AccountChooser(accounts, this.parentUI.getTextArea());
-                Thread.sleep(5);
                 parentUI.getExit().setEnabled(true);
             } else {
                 throw new FileNotFoundException();
             }
         } catch (FileNotFoundException fnfe) {
-            System.out.println("file not found");
+            fnfe.printStackTrace();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         } finally {
             parentUI.getPanel().repaint();
         }
@@ -59,24 +64,23 @@ public class FileButton extends JButton {
             return myAccounts;// returns the array
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            return new Account[0];
         }
 
     }
 
-    private String getStringFromFile(String localFileName) throws Exception {// reads in a file and returns the
-                                                                             // contents as a string
+    private String getStringFromFile(String localFileName){// reads in a file and returns the contents as a string
         try {
-            String result = "";
             File file = new File(localFileName);
             Scanner scanner = new Scanner(file);
+            StringBuilder bld = new StringBuilder();
 
             while (scanner.hasNextLine()) {
-                result += scanner.nextLine();
+                bld.append(scanner.nextLine());
             }
             scanner.close();
 
-            return result;
+            return bld.toString();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(1);
