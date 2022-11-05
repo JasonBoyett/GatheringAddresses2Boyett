@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 public class Account implements Serializable{
 
     static final String NO_COMMENT = "no comment added";
+    private static final String ASK_FOR_COMMENT = "Do you want to add a comment to this account?";
     private String id = "";
     private String name = "";
     private String address = "";
@@ -25,14 +26,12 @@ public class Account implements Serializable{
     private String phone = "";
     private String timeToContact = "";
     private String comment = "";
-    private static final String ASK_FOR_COMMENT = "Do you want to add a comment to this account?"; 
     LocalDateTime timeCreated;
     int balance = 0;//saved as an integer value of cents
 
     public Account(String constructor){//object constructor
 
-
-        parseConstructorString(constructor,this);//this function parses the constructor string into the data fields of the constructed object
+        parseConstructorString(constructor);//this function parses the constructor string into the data fields of the constructed object
         String nameIDAndComment = "Account ID : " + this.id + "\n" +"Name: "+ this.name + "\n" + ASK_FOR_COMMENT;
         this.timeCreated = LocalDateTime.now();//shows the time the object was created
         this.comment = JOptionPane.showInputDialog(null, nameIDAndComment);//adds a comment to the account
@@ -62,7 +61,7 @@ public class Account implements Serializable{
 
    
 
-    public void parseConstructorString(String constructor, Account account){
+    private void parseConstructorString(String constructor){
         String[] attributes = new String[9];
         String attributeDelimiter = "$";
         StringTokenizer tokenizer = new StringTokenizer(constructor, attributeDelimiter);
@@ -71,15 +70,15 @@ public class Account implements Serializable{
             attributes[i] = tokenizer.nextToken();
         }
 
-        account.id = attributes[0];
-        account.name = attributes[1];
-        account.address = attributes[2];
-        account.state = attributes[3];
-        account.city = attributes[4];
-        account.zipCode = attributes[5];
-        account.phone = attributes[6];
-        account.timeToContact = attributes[7];
-        account.balance = Integer.parseInt(attributes[8]);
+        this.id = attributes[0];
+        this.name = attributes[1];
+        this.address = attributes[2];
+        this.state = attributes[3];
+        this.city = attributes[4];
+        this.zipCode = attributes[5];
+        this.phone = attributes[6];
+        this.timeToContact = attributes[7];
+        this.balance = Integer.parseInt(attributes[8]);
 
     }
 

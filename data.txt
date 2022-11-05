@@ -1,20 +1,20 @@
-02$Bob$address$Texas$San Antonio$12345$1(222)-234-4321$AFTERNOON$10000$%
-04$Dale$address$Texas$Huston$12345$1(222)-234-4321$EVENING$100000$%
-05$Chris$address$Texas$Kerrville$12345$1(222)-234-4321$MORNING$100000$%
-08$Wendy$address$Texas$San Marcos$12345$1(222)-234-4321$EVENING$700000$%
-06$Sarah$address$Texas$Kerrville$12345$1(222)-234-4321$MORNING$400000$%
-03$Joe$address$Texas$Dallas$12345$1(222)-234-4321$AFTERNOON$10000$%
-01$Jim$address$Texas$Austin$12345$1(222)-234-4321$AFTERNOON$10000$%
-10$Lucy$address$Texas$Dallas$12345$1(222)-234-4321$EVENING$700000$%
-09$Samantha$address$Texas$San Marcos$12345$1(222)-234-4321$EVENING$700000$%
-45$Randy$123 Main st.$Texas$San Marcos$12345$1(222)-234-4321$EVENING$70000000$%
-02$Bob$address$Texas$San Antonio$12345$1(222)-234-4321$AFTERNOON$10000$%
-04$Dale$address$Texas$Huston$12345$1(222)-234-4321$EVENING$100000$%
-05$Chris$address$Texas$Kerrville$12345$1(222)-234-4321$MORNING$100000$%
-08$Wendy$address$Texas$San Marcos$12345$1(222)-234-4321$EVENING$700000$%
-06$Sarah$address$Texas$Kerrville$12345$1(222)-234-4321$MORNING$400000$%
-03$Joe$address$Texas$Dallas$12345$1(222)-234-4321$AFTERNOON$10000$%
-01$Jim$address$Texas$Austin$12345$1(222)-234-4321$AFTERNOON$10000$%
-10$Lucy$address$Texas$Dallas$12345$1(222)-234-4321$EVENING$700000$%
-09$Samantha$address$Texas$San Marcos$12345$1(222)-234-4321$EVENING$700000$%
-45$Randy$123 Main st.$Texas$San Marcos$12345$1(222)-234-4321$EVENING$70000000$%
+02$Bob$123 main st.$Texas$San Antonio$12345$1(222)-234-4321$AFTERNOON$10000$%
+04$Dale$45 far road$Texas$Huston$12345$1(222)-234-4321$EVENING$100000$%
+05$Chris$678 lime kilm$Texas$Kerrville$12345$1(222)-234-4321$MORNING$100000$%
+08$Wendy$559 main st.$Texas$San Marcos$12345$1(222)-234-4321$EVENING$700000$%
+06$Sarah$788 near ln.$Texas$Kerrville$12345$1(222)-234-4321$MORNING$400000$%
+03$Joe$588 Johnson st.$Texas$Dallas$12345$1(222)-234-4321$AFTERNOON$10000$%
+01$Jim$56 bobcat rd.$Texas$Austin$12345$1(222)-234-4321$AFTERNOON$10000$%
+10$Lucy$777 board st.$Texas$Dallas$12345$1(222)-234-4321$EVENING$700000$%
+09$Samantha$663 green st.$Texas$San Marcos$12345$1(222)-234-4321$EVENING$700000$%
+45$Randy$788 Main st.$Texas$San Marcos$12345$1(222)-234-4321$EVENING$70000000$%
+12$Mo$143 ceder drive.$Texas$San Antonio$12345$1(222)-234-4321$AFTERNOON$10000$%
+14$Curly$890 street dr890 street dr.$Texas$Huston$12345$1(222)-234-4321$EVENING$100000$%
+15$Mrs. Petifoot$1124 blue circle$Texas$Kerrville$12345$1(222)-234-4321$MORNING$100000$%
+18$Layla$746 young st.$Texas$San Marcos$12345$1(222)-234-4321$EVENING$700000$%
+16$Izabel$88 pecan st.$Texas$Kerrville$12345$1(222)-234-4321$MORNING$400000$%
+13$Katy$751 white run st.$Texas$Dallas$12345$1(222)-234-4321$AFTERNOON$10000$%
+11$McCoy$72 trail head dr.$Texas$Austin$12345$1(222)-234-4321$AFTERNOON$10000$%
+10$Zach$90 foxtrot ln.$Texas$Dallas$12345$1(222)-234-4321$EVENING$700000$%
+19$Harley$43 folksi dr.$Texas$San Marcos$12345$1(222)-234-4321$EVENING$700000$%
+9.75$Harry$4 privet dr.$Surrey, UK$Little Winging$12345$unlisted$by owl$70000000$%

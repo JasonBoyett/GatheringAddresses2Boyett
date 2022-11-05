@@ -27,7 +27,7 @@ public class FileButton extends JButton {
         this.text.setEditable(false);
     }
 
-    public void press() {
+    public void press() {//the method used when the user presses this button
         try {
             JFileChooser chooser = new JFileChooser();
             int found = chooser.showOpenDialog(parentUI);
@@ -41,9 +41,9 @@ public class FileButton extends JButton {
                 throw new FileNotFoundException();
             }
         } catch (FileNotFoundException fnfe) {
-            fnfe.printStackTrace();
+            this.parentUI.getTextArea().setText("File not found");
         } catch (Exception e) {
-            e.printStackTrace();
+            this.parentUI.getTextArea().setText("Error, please try again");
         } finally {
             parentUI.getPanel().repaint();
         }
