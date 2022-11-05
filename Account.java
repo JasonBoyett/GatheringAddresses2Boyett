@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.StringTokenizer;
 
 import javax.swing.JOptionPane;
 
@@ -64,16 +65,11 @@ public class Account implements Serializable{
     public void parseConstructorString(String constructor, Account account){
         String[] attributes = new String[9];
         int startIndex = 0;
-        char attributeDelimiter = '$';
+        String attributeDelimiter = "$";
+        StringTokenizer tokenizer = new StringTokenizer(constructor, attributeDelimiter);
 
-        for(int i = 0; i < attributes.length; i++){
-            for(int j = startIndex; j < constructor.length(); j++){
-                if(constructor.charAt(j) == attributeDelimiter) {
-                    attributes[i] = constructor.substring(startIndex,j);
-                    startIndex = j + 1;
-                    break;
-                }
-            }
+        for(int i = 0; i < attributes.length ; i++) {
+            attributes[i] = tokenizer.nextToken();
         }
 
         account.id = attributes[0];

@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -38,8 +39,7 @@ public class FileButton extends JButton {
             System.out.println("file not found");
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }
-        finally{
+        } finally {
             parent.getPanel().repaint();
         }
 
@@ -67,21 +67,15 @@ public class FileButton extends JButton {
         // number of
         // objects
         String constructor = "";
-        try {// breaks up the constructionString into constructors for individual account
-             // objects and builds those objects once it hits the object delimiter
-            for (int i = 0; i < constructionString.length(); i++) {// loops through the constructionString
-                if (constructionString.charAt(i) != objectDelimiter) {// passes the constructor once it hits the object
-                                                                      // delimiter
-                    constructor += constructionString.charAt(i);
-                } else {// once the object delimiter is hit then the constructor string is passed to the
-                        // Account constructor method and the holder string is reset
-                    myAccounts[accountsIndex] = new Account(constructor);
-                    accountsIndex++;// array position is incremented
-                    constructor = "";
-                }
+        try {// breaks up the constructionString into constructors for individual accounts
+            StringTokenizer tokenizer = new StringTokenizer(constructionString, Character.toString(objectDelimiter));
+
+            for(int i = 0; i < myAccounts.length; i++){
+                myAccounts[i] = new Account(tokenizer.nextToken());
             }
             return myAccounts;// returns the array
-        } catch (Exception e) {
+        }
+        catch(Exception e){
             e.printStackTrace();
             return null;
         }
