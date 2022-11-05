@@ -33,6 +33,9 @@ public class AccountChooser extends JFrame {
         panel.add(create);
         for (int i = 0; i < accounts.length; i++) {
             this.boxes[i] = new JCheckBox(this.accounts[i].getName());
+            if(!accounts[i].getComment().equals(Account.NO_COMMENT)){
+                this.boxes[i].setText(this.boxes[i].getText()+ ": " + accounts[i].getComment());
+            }
             panel.add(boxes[i]);
         }
 

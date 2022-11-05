@@ -15,15 +15,16 @@ import javax.swing.JOptionPane;
 
 public class Account implements Serializable{
 
-    String id = "";
-    String name = "";
-    String address = "";
-    String state = "";
-    String city = "";
-    String zipCode = "";
-    String phone = "";
-    String timeToContact = "";
-    String comment = "";
+    static final String NO_COMMENT = "no comment added";
+    private String id = "";
+    private String name = "";
+    private String address = "";
+    private String state = "";
+    private String city = "";
+    private String zipCode = "";
+    private String phone = "";
+    private String timeToContact = "";
+    private String comment = "";
     private static final String ASK_FOR_COMMENT = "Do you want to add a comment to this account?"; 
     LocalDateTime timeCreated;
     int balance = 0;//saved as an integer value of cents
@@ -36,7 +37,7 @@ public class Account implements Serializable{
         this.timeCreated = LocalDateTime.now();//shows the time the object was created
         this.comment = JOptionPane.showInputDialog(null, nameIDAndComment);//adds a comment to the account
         if(this.comment == null || this.comment.equals("")){//if the user doesn't add a comment the comment will be "no comment added"
-            this.comment = "No comment added.";
+            this.comment = NO_COMMENT;
         }
         serializeAccount();//account object is serialized
 
@@ -97,6 +98,10 @@ public class Account implements Serializable{
 
     public String getName(){
         return this.name;
+    }
+
+    public String getComment(){
+        return this.comment;
     }
 
 }
