@@ -1,0 +1,10 @@
+02$Bob$address$Texas$San Antonio$12345$1(222)-234-4321$AFTERNOON$10000$%
+04$Dale$address$Texas$Huston$12345$1(222)-234-4321$EVENING$100000$%
+05$Chris$address$Texas$Kerrville$12345$1(222)-234-4321$MORNING$100000$%
+08$Wendy$address$Texas$San Marcos$12345$1(222)-234-4321$EVENING$700000$%
+06$Sarah$address$Texas$Kerrville$12345$1(222)-234-4321$MORNING$400000$%
+03$Joe$address$Texas$Dallas$12345$1(222)-234-4321$AFTERNOON$10000$%
+01$Jim$address$Texas$Austin$12345$1(222)-234-4321$AFTERNOON$10000$%
+10$Lucy$address$Texas$Dallas$12345$1(222)-234-4321$EVENING$700000$%
+09$Samantha$address$Texas$San Marcos$12345$1(222)-234-4321$EVENING$700000$%
+45$Randy$123 Main st.$Texas$San Marcos$12345$1(222)-234-4321$EVENING$70000000$%
