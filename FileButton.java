@@ -9,29 +9,29 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 public class FileButton extends JButton {
-    UI parent;
+    UI parentUI;
     JTextArea text = new JTextArea();
     JScrollPane scroll = new JScrollPane(text);
 
     public FileButton(UI parent) {
         super("Select File");
-        this.parent = parent;
+        this.parentUI = parent;
         this.addActionListener(e -> press());
-        this.parent = parent;
+        this.parentUI = parent;
         this.text.setEditable(false);
     }
 
     public void press() {
         try {
             JFileChooser chooser = new JFileChooser();
-            int found = chooser.showOpenDialog(parent);
+            int found = chooser.showOpenDialog(parentUI);
 
             if (found == JFileChooser.APPROVE_OPTION) {
                 String filename = chooser.getSelectedFile().getAbsolutePath();
                 Account accounts[] = constructAccounts(getStringFromFile(filename));
-                AccountChooser accountChooser = new AccountChooser(accounts, this.parent.getTextArea());
+                AccountChooser accountChooser = new AccountChooser(accounts, this.parentUI.getTextArea());
                 Thread.sleep(5);
-                parent.getExit().setEnabled(true);
+                parentUI.getExit().setEnabled(true);
             } else {
                 throw new FileNotFoundException();
             }
@@ -40,42 +40,24 @@ public class FileButton extends JButton {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
-            parent.getPanel().repaint();
+            parentUI.getPanel().repaint();
         }
 
-    }
-
-    private String showResults(Account accounts[]) {
-        String result = "";
-        for (Account account : accounts) {
-            result += account.getInfoString() + "\n";
-        }
-        return result;
     }
 
     private Account[] constructAccounts(String constructionString) {// creates account objects from the given
                                                                     // string and stores them in an array that is
                                                                     // then returned
 
-        int accountsIndex = 0;// used to indicate the constructed objects position in the array
-        char objectDelimiter = '%';
-        Account[] myAccounts = new Account[this.findNumberOfObjects(constructionString, objectDelimiter)];// sets the
-                                                                                                          // size of
-        // the array based
-        // on the method
-        // that finds the
-        // number of
-        // objects
-        String constructor = "";
-        try {// breaks up the constructionString into constructors for individual accounts
-            StringTokenizer tokenizer = new StringTokenizer(constructionString, Character.toString(objectDelimiter));
-
-            for(int i = 0; i < myAccounts.length; i++){
+        String objectDelimiter = "%";
+        StringTokenizer tokenizer = new StringTokenizer(constructionString, objectDelimiter);
+        Account[] myAccounts = new Account[tokenizer.countTokens()];// sets the size of the array based on the number of tokens
+        try {
+            for (int i = 0; i < myAccounts.length; i++) {// breaks up the constructionString into constructors for individual accounts
                 myAccounts[i] = new Account(tokenizer.nextToken());
             }
             return myAccounts;// returns the array
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -100,21 +82,5 @@ public class FileButton extends JButton {
             System.exit(1);
             return null;
         }
-    }
-
-    private int findNumberOfObjects(String fromFile, char objectDelimiter) {// finds the number of objects in
-                                                                            // file using the number of object
-                                                                            // delimiters
-
-        int result = 0;
-        for (int i = 0; i < fromFile.length(); i++) {
-
-            if (fromFile.charAt(i) == objectDelimiter) {
-                result++;
-            }
-
-        }
-
-        return result;
     }
 }
