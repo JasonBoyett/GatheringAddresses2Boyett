@@ -11,25 +11,20 @@ import java.util.StringTokenizer;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 
 public class FileButton extends JButton {
     UI parentUI;
-    JTextArea text = new JTextArea();
-    JScrollPane scroll = new JScrollPane(text);
 
     public FileButton(UI parent) {
         super("Select File");
         this.parentUI = parent;
         this.addActionListener(e -> press());
-        this.parentUI = parent;
-        this.text.setEditable(false);
     }
 
     public void press() {//the method used when the user presses this button
         try {
             JFileChooser chooser = new JFileChooser();
+            chooser.setCurrentDirectory(new File("."));
             int found = chooser.showOpenDialog(parentUI);
 
             if (found == JFileChooser.APPROVE_OPTION) {

@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.plaf.DimensionUIResource;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 
 public class UI extends JFrame {

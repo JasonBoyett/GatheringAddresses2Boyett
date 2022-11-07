@@ -59,8 +59,6 @@ public class Account implements Serializable{
         return info;
     }
 
-   
-
     private void parseConstructorString(String constructor){
         String[] attributes = new String[9];
         String attributeDelimiter = "$";

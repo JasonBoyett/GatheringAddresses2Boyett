@@ -34,13 +34,13 @@ public class AccountChooser extends JFrame {
         for (int i = 0; i < accounts.length; i++) {
             this.boxes[i] = new JCheckBox(this.accounts[i].getName());
             if(!accounts[i].getComment().equals(Account.NO_COMMENT)){
-                this.boxes[i].setText(this.boxes[i].getText()+ ": " + accounts[i].getComment());
+                this.boxes[i].setText(this.boxes[i].getText() + ": " + accounts[i]);
             }
             panel.add(boxes[i]);
         }
 
         create.addActionListener(e -> this.setTarget());
-        this.pack();
+        this.setSize(this.target.getParent().getSize());
     }
 
     public Account[] getSelected() {
